@@ -1,0 +1,474 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>StocksChart</title>
+		<link rel="stylesheet" href="../amcharts/style.css"	type="text/css">
+
+		<script src="../amcharts/amcharts.js" type="text/javascript"></script>
+		<script src="../amcharts/serial.js" type="text/javascript"></script>
+		<script src="../amcharts/amstock.js" type="text/javascript"></script>
+
+
+		<script type="text/javascript">
+
+			var chartData1 = [];
+
+			generateChartData();
+
+			function generateChartData() {
+				var firstDate = new Date();
+				firstDate.setDate(firstDate.getDate() - 280);
+				firstDate.setHours(0, 0, 0, 0);
+
+				var data = [167.12	,
+163.05	,
+162.95	,
+169.09	,
+169.5	,
+175.31	,
+175.1	,
+176.52	,
+174.1	,
+173.8	,
+173.5	,
+173.04	,
+174.58	,
+174.77	,
+174.94	,
+174.59	,
+174.2	,
+174.43	,
+175.6	,
+177.19	,
+178.8	,
+179.57	,
+180.74	,
+178.99	,
+176.34	,
+178.39	,
+177.44	,
+181.58	,
+181.36	,
+182.78	,
+157.74	,
+156.65	,
+158.83	,
+155.43	,
+153.82	,
+155.82	,
+157.39	,
+159.44	,
+160.25	,
+161.49	,
+156.69	,
+161.98	,
+160.62	,
+161.09	,
+161.37	,
+161.99	,
+164.14	,
+162.85	,
+163.9	,
+165.12	,
+163.49	,
+164.2	,
+164.39	,
+165.18	,
+166.92	,
+167.64	,
+165.26	,
+163.54	,
+162.1	,
+162.3	,
+160.57	,
+161.89	,
+161.82	,
+162.64	,
+162.95	,
+162.1	,
+163.15	,
+163.65	,
+164.11	,
+163.89	,
+164.52	,
+166.33	,
+167.17	,
+168.08	,
+167.34	,
+164.53	,
+162.64	,
+164.04	,
+165.14	,
+164.24	,
+163.79	,
+164.2	,
+165.4	,
+163.95	,
+162.51	,
+162.45	,
+162.05	,
+162.7	,
+160.73	,
+160.64	,
+158.98	,
+159.9	,
+158.3	,
+157.21	,
+157.93	,
+158.18	,
+160.31	,
+161.81	,
+162.62	,
+161.55	,
+161.33	,
+162.49	,
+162.98	,
+167.87	,
+168.1	,
+169.97	,
+170.04	,
+170	,
+169.33	,
+170.18	,
+166.97	,
+167.12	,
+168.29	,
+166.93	,
+163.05	,
+162.95	,
+165.8	,
+166.15	,
+165.78	,
+169.09	,
+169.5	,
+169.16	,
+171.52	,
+172.13	,
+175.31	,
+175.1	,
+175.15	,
+176.53	,
+176.61	,
+176.52	,
+174.1	,
+174	,
+173.8	,
+173.5	,
+173.04	,
+174.58	,
+174.77	,
+174.94	,
+174.59	,
+174.2	,
+174.43	,
+175.6	,
+177.19	,
+178.8	,
+179.57	,
+180.74	,
+178.99	,
+176.34	,
+178.39	,
+177.44	,
+181.58	,
+181.36	,
+182.78	,
+177.89	,
+176.35	,
+178.34	,
+176.92	,
+173.02	,
+176.35	,
+174.55	,
+174.47	,
+172.88	,
+176.11	,
+175.19	,
+174.72	,
+176.24	,
+175.53	,
+172.61	,
+176.01	,
+180.67	,
+181.33	,
+183	,
+185.55	,
+186.43	,
+189.29	,
+190.57	,
+190.75	,
+190.79	,
+189.73	,
+189.88	,
+186.15	,
+186.99	,
+187.12	,
+186.87	,
+187.97	,
+186.6	,
+185.51	,
+186.56	,
+186	,
+185.56	,
+187.93	,
+188.82	,
+188.67	,
+189.15	,
+191.56	,
+191.1	,
+190.11	,
+189.68	,
+189.73	,
+189.87	,
+189.85	,
+190.62	,
+187.91	,
+189.25	,
+185.18	,
+184.21	,
+185.39	,
+185.15	,
+191.64	,
+192.85	,
+196.45	,
+195.77	,
+196.43	,
+196.84	,
+195.64	,
+195.43	,
+192.57	,
+193.31	,
+189.29	,
+188.4	,
+190.83	,
+195.13	,
+195.02	,
+194.47	,
+194.35	,
+193.23	,
+192.37	,
+194.71	,
+195.75	,
+195.5	,
+198.09	,
+197.44	,
+195.68	,
+190.55	,
+189.25	,
+192.5	,
+188.37	,
+189.33	,
+192	,
+192.28	,
+194.06	,
+195.24	,
+193.02	,
+195.67	,
+196.31	,
+197.48	,
+196.95	,
+197.57	,
+198.57	,
+201.71	,
+203.99	,
+205.59	,
+206.62	,
+204.86	,
+201.33	,
+200.05	,
+203.02	,
+199.93	,
+198.97	,
+199.1	,
+197.66	,
+199.74	,
+197.58	,
+197.21	,
+198.78	,
+197.11	,
+202.11	,
+200.67	,
+202.6	,
+202.19	,
+203.77	,
+202.92	,
+203.3	,
+199.02	,
+200.56	,
+202.23	,
+204.89	,
+202.96	,
+198.76	,
+198.72	]
+
+
+				for (var i = 0; i < 280; i++) {
+					var newDate = new Date(firstDate);
+					newDate.setDate(newDate.getDate() + i);
+
+					//var a1 = fread(fh,10);
+					var a1 = data[i];
+					//var a1 = Math.round(Math.random() * (40 + i)) + 100 + i;
+					//var b1 = Math.round(Math.random() * (1000 + i)) + 500 + i * 2;
+
+					//var a2 = Math.round(Math.random() * (100 + i)) + 200 + i;
+					//var b2 = Math.round(Math.random() * (1000 + i)) + 600 + i * 2;
+
+					//var a3 = Math.round(Math.random() * (100 + i)) + 200;
+					//var b3 = Math.round(Math.random() * (1000 + i)) + 600 + i * 2;
+
+					//var a4 = Math.round(Math.random() * (100 + i)) + 200 + i;
+					//var b4 = Math.round(Math.random() * (100 + i)) + 600 + i;
+
+					chartData1.push({
+						date: newDate,
+						value: a1,
+						//volume: b1
+					});
+					//chartData2.push({
+						//date: newDate,
+						//value: a2,
+						//volume: b2
+					//});
+					//chartData3.push({
+						//date: newDate,
+						//value: a3,
+						//volume: b3
+					/*});
+					chartData4.push({
+						date: newDate,
+						value: a4,
+						volume: b4
+					});*/
+				}
+			}
+
+			AmCharts.makeChart("chartdiv", {
+				type: "stock",
+				pathToImages: "../amcharts/images/",
+				dataSets: [{
+					//title: "first data set",
+					fieldMappings: [{
+						fromField: "value",
+						toField: "value"
+					}, {
+						fromField: "volume",
+						toField: "volume"
+					}],
+					dataProvider: chartData1,
+					categoryField: "date"
+				},
+
+				/*{
+					title: "second data set",
+					fieldMappings: [{
+						fromField: "value",
+						toField: "value"
+					}, {
+						fromField: "volume",
+						toField: "volume"
+					}],
+					dataProvider: chartData2,
+					categoryField: "date"
+				},
+
+				{
+					title: "third data set",
+					fieldMappings: [{
+						fromField: "value",
+						toField: "value"
+					}, {
+						fromField: "volume",
+						toField: "volume"
+					}],
+					dataProvider: chartData3,
+					categoryField: "date"
+				},
+
+				{
+					title: "fourth data set",
+					fieldMappings: [{
+						fromField: "value",
+						toField: "value"
+					}, {
+						fromField: "volume",
+						toField: "volume"
+					}],
+					dataProvider: chartData4,
+					categoryField: "date"
+				}*/],
+
+				panels: [{
+
+					showCategoryAxis: false,
+					title: "Value",
+					percentHeight: 70,
+
+					stockGraphs: [{
+						id: "g1",
+
+						valueField: "value",
+						comparable: true,
+						compareField: "value",
+						bullet: "round",
+						bulletBorderColor: "#FFFFFF",
+						bulletBorderAlpha: 1,
+						balloonText: "[[title]]:<b>[[value]]</b>",
+						compareGraphBalloonText: "[[title]]:<b>[[value]]</b>",
+						compareGraphBullet: "round",
+						compareGraphBulletBorderColor: "#FFFFFF",
+						compareGraphBulletBorderAlpha: 1
+					}],
+
+					stockLegend: {
+						periodValueTextComparing: "[[percents.value.close]]%",
+						periodValueTextRegular: "[[value.close]]"
+					}
+				},],
+
+				chartScrollbarSettings: {
+					graph: "g1"
+				},
+
+				chartCursorSettings: {
+					valueBalloonsEnabled: true,
+					valueLineEnabled:true,
+					valueLineBalloonEnabled:true
+				},
+
+				periodSelector: {
+					position: "left",
+					periods: [{
+						period: "DD",
+						count: 10,
+						label: "10 days"
+					}, {
+						period: "MM",
+						selected: true,
+						count: 1,
+						label: "1 month"
+					}, {
+						period: "YYYY",
+						count: 1,
+						label: "1 year"
+					}, {
+						period: "YTD",
+						label: "YTD"
+					}, {
+						period: "MAX",
+						label: "MAX"
+					}]
+				},
+
+				dataSetSelector: {
+					position: "left"
+				}
+			});
+		</script>
+	</head>
+	<body style="background-color:#FFFFFF">
+		<div id="chartdiv" style="width:100%; height:600px;"></div>
+	</body>
+
+</html>

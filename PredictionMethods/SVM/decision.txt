@@ -1,0 +1,22 @@
+ 
+sell, Descending triangle
+sell, Descending triangle
+buy, Ascending triangle
+sell, Descending triangle
+buy, Ascending triangle
+buy, Ascending triangle
+buy, Ascending triangle
+sell, Descending triangle
+sell, Descending triangle
+buy, Ascending triangle
+buy, Ascending triangle
+buy, Ascending triangle
+buy, Ascending triangle
+buy, Ascending triangle
+buy, Ascending triangle
+buy, Ascending triangle
+buy, Ascending triangle
+buy, Ascending triangle
+buy, Ascending triangle
+sell, Descending triangle
+sell, Descending triangle
